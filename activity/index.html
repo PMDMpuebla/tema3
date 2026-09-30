@@ -1,0 +1,1037 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Introducción a Android - Tema 3 del módulo PMDM">
+      
+      
+      
+        <link rel="canonical" href="https://pmdmpuebla.github.io/tema3/activity/">
+      
+      
+        <link rel="prev" href="../introduccion/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Activity - Programación Multimedia y Dispositivos Móviles (PMDM) - Tema 3</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/style.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#activities" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Programación Multimedia y Dispositivos Móviles (PMDM) - Tema 3" class="md-header__button md-logo" aria-label="Programación Multimedia y Dispositivos Móviles (PMDM) - Tema 3" data-md-component="logo">
+      
+  <img src="../img/alogo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programación Multimedia y Dispositivos Móviles (PMDM) - Tema 3
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Activity
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Programación Multimedia y Dispositivos Móviles (PMDM) - Tema 3" class="md-nav__button md-logo" aria-label="Programación Multimedia y Dispositivos Móviles (PMDM) - Tema 3" data-md-component="logo">
+      
+  <img src="../img/alogo.png" alt="logo">
+
+    </a>
+    Programación Multimedia y Dispositivos Móviles (PMDM) - Tema 3
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activity
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-un-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creación de un Activity
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creación de un Activity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#appcompatactivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AppCompatActivity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ciclo-de-vida-de-un-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ciclo de vida de un Activity
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ciclo de vida de un Activity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metodos-del-ciclo-de-vida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Métodos del ciclo de vida
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definir-el-layout-de-un-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definir el layout de un Activity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#registrar-un-activity-en-el-androidmanifestxml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registrar un Activity en el AndroidManifest.xml
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interfaces en Android (Clásicas)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Interfaces en Android (Clásicas)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/interfaces_clasicas.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clásicas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/layouts.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layouts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/controles.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Controles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/adapters.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adapters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jetpack Compose
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Jetpack Compose
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jetpack/jetpack_compose.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jetpack/composables.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Composables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jetpack/layouts_compose.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layouts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../referencias.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencias
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-de-un-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creación de un Activity
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creación de un Activity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#appcompatactivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AppCompatActivity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ciclo-de-vida-de-un-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ciclo de vida de un Activity
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ciclo de vida de un Activity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metodos-del-ciclo-de-vida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Métodos del ciclo de vida
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definir-el-layout-de-un-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definir el layout de un Activity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#registrar-un-activity-en-el-androidmanifestxml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registrar un Activity en el AndroidManifest.xml
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="activities">Activities</h1>
+<p>En Android, una Activity representa una sola pantalla con una interfaz de usuario. Es uno de los componentes fundamentales de una aplicación Android y permite a los usuarios interactuar con la aplicación.</p>
+<p>Cada Activity tiene un ciclo de vida bien definido, que consiste en varios estados y métodos que se llaman en diferentes momentos. Estos métodos permiten a los desarrolladores gestionar el comportamiento de la Activity en respuesta a eventos del sistema y del usuario.</p>
+<p>Esta actividad puede ser iniciada por el sistema o por otra Activity, y puede ser destruida cuando ya no es necesaria. Es importante comprender el ciclo de vida de una Activity para garantizar un manejo adecuado de los recursos y una experiencia de usuario fluida.</p>
+<p>Existen diferentes tipos de Activities, como las Activities principales, que son el punto de entrada de la aplicación, y las Activities secundarias, que se utilizan para mostrar información adicional o realizar tareas específicas.</p>
+<p>Durante este tema, exploraremos cómo crear y gestionar Activities en Android, así como cómo manejar su ciclo de vida para garantizar un comportamiento adecuado de la aplicación. También aprenderemos a pasar datos entre Activities y a utilizar Intents para iniciar nuevas Activities.</p>
+<h2 id="creacion-de-un-activity">Creación de un Activity</h2>
+<p>Vamos a crear un Activity en Android utilizando Kotlin. Para ello, seguiremos los siguientes pasos:</p>
+<ol>
+<li>Crear una nueva clase que extienda de <code>AppCompatActivity</code>.</li>
+<li>Sobrescribir el método <code>onCreate()</code> para inicializar la Activity y establecer su contenido de la interfaz de usuario.</li>
+<li>Definir el layout de la Activity en un archivo XML o utilizando Jetpack Compose.</li>
+<li>Registrar la Activity en el archivo <code>AndroidManifest.xml</code> para que el sistema pueda reconocerla y lanzarla cuando sea necesario.</li>
+</ol>
+<p>Veamos en detalle cada uno de estos pasos y cómo implementarlos en nuestro proyecto Android.</p>
+<h3 id="appcompatactivity">AppCompatActivity</h3>
+<p><code>AppCompatActivity</code> es una clase de la biblioteca de compatibilidad de Android que proporciona funcionalidades adicionales y soporte para características más recientes de Android. Al extender <code>AppCompatActivity</code>, nuestra Activity obtiene acceso a las funciones de ActionBar, temas personalizados y otras características que mejoran la experiencia del usuario.</p>
+<p>Es importante realiarlo tanto en el lenguaje de programación Kotlin como en Java, ya que es la base para crear Activities modernas y compatibles con diferentes versiones de Android.</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nn">android.os.Bundle</span>
+<span class="k">import</span><span class="w"> </span><span class="nn">androidx.appcompat.app.AppCompatActivity</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nc">MainActivity</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">AppCompatActivity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span><span class="w"> </span><span class="n">Bundle?</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+<span class="w">        </span><span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">activity_main</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Habrás podido observar que en el ejemplo anterior, hemos sobrescrito el método <code>onCreate()</code> para inicializar la Activity y establecer su contenido de la interfaz de usuario utilizando un layout definido en XML.</p>
+<p>Este método es especial ya que forma parte de los métodos del ciclo de vida de una Activity y se llama cuando la Activity se crea por primera vez. Es el lugar adecuado para realizar la inicialización de la interfaz de usuario y configurar cualquier recurso necesario para la Activity.</p>
+<h2 id="ciclo-de-vida-de-un-activity">Ciclo de vida de un Activity</h2>
+<p>Uno de los aspectos más importantes a comprender al trabajar con Activities en Android es su ciclo de vida. El ciclo de vida de una Activity describe los diferentes estados por los que pasa una Activity desde su creación hasta su destrucción.</p>
+<p>Un Activity puede estar en uno de los siguientes estados:</p>
+<ol>
+<li><strong>Creada (Created)</strong>: La Activity ha sido creada, pero aún no es visible para el usuario.</li>
+<li><strong>Iniciada (Started)</strong>: La Activity es visible para el usuario, pero aún no está en primer plano.</li>
+<li><strong>Reanudada (Resumed)</strong>: La Activity está en primer plano y el usuario puede interactuar con ella.</li>
+<li><strong>Pausada (Paused)</strong>: La Activity está parcialmente visible, pero otra Activity está en primer plano y el usuario no puede interactuar con ella.</li>
+<li><strong>Detenida (Stopped)</strong>: La Activity ya no es visible para el usuario y está en segundo plano.</li>
+<li><strong>Destruida (Destroyed)</strong>: La Activity ha sido destruida y liberada de memoria.</li>
+<li><strong>Reiniciada (Restarted)</strong>: La Activity ha sido reiniciada después de haber sido detenida.</li>
+</ol>
+<figure>
+    <img src="https://developer.android.com/images/activity_lifecycle.png" alt="Ciclo de vida de un Activity" />
+    <figcaption>Ciclo de vida de un Activity en Android</figcaption>
+</figure>
+
+<h3 id="metodos-del-ciclo-de-vida">Métodos del ciclo de vida</h3>
+<p>Habrás podido ver que cada estado del ciclo de vida de un Activity está asociado con métodos específicos que se llaman automáticamente por el sistema en diferentes momentos. Estos métodos permiten a los desarrolladores gestionar el comportamiento de la Activity y realizar acciones adecuadas en respuesta a eventos del sistema y del usuario.</p>
+<p>Cada método del ciclo de vida tiene un propósito específico y se utiliza para realizar tareas como inicializar recursos, guardar el estado de la Activity, liberar recursos o actualizar la interfaz de usuario.</p>
+<p>Es importante saber utilizar estos métodos de manera adecuada para garantizar un manejo eficiente de los recursos y una experiencia de usuario fluida. A continuación, se describen los métodos más importantes del ciclo de vida de un Activity:</p>
+<ol>
+<li><strong>onCreate()</strong>: Se llama cuando la Activity se crea por primera vez. Es el lugar adecuado para inicializar la interfaz de usuario y configurar cualquier recurso necesario para la Activity.</li>
+<li><strong>onStart()</strong>: Se llama cuando la Activity se vuelve visible para el usuario. Aquí se pueden realizar tareas relacionadas con la preparación de la interfaz de usuario y la actualización de datos.</li>
+<li><strong>onPause()</strong>: Se llama cuando la Activity se pausa. Aquí se pueden realizar tareas relacionadas con guardar el estado de la interfaz antes de pausar.</li>
+<li><strong>onRestart()/onResume()</strong>: Se llama cuando la Activity se reinicia después de haber sido pausada. Aquí se pueden realizar tareas relacionadas con la reanudación de la interfaz y la actualización de datos.</li>
+<li><strong>onStop()</strong>: Se llama cuando la Activity se detiene. Aquí se pueden realizar tareas relacionadas con liberar recursos y guardar el estado de la Activity.</li>
+<li><strong>onDestroy()</strong>: Se llama cuando la Activity es destruida. Aquí se pueden realizar tareas relacionadas con liberar todos los recursos y finalizar la Activity.</li>
+</ol>
+<h2 id="definir-el-layout-de-un-activity">Definir el layout de un Activity</h2>
+<p>Es importante definir el layout de un Activity para determinar cómo se verá la interfaz de usuario. En Android, existen dos enfoques principales para definir el layout: utilizando archivos XML o utilizando Jetpack Compose:</p>
+<ul>
+<li><strong>XML Layouts</strong>: Los layouts XML son archivos que describen la estructura y apariencia de la interfaz de usuario utilizando un lenguaje de marcado. Estos archivos se colocan en la carpeta <code>res/layout</code> del proyecto y se pueden referenciar desde el código de la Activity para establecer el contenido de la interfaz.</li>
+<li><strong>Jetpack Compose</strong>: Jetpack Compose es un enfoque moderno para crear interfaces de usuario en Android utilizando un lenguaje declarativo basado en Kotlin. Con Compose, se pueden definir los elementos de la interfaz directamente en el código de la Activity, lo que permite una mayor flexibilidad y facilidad de uso.</li>
+</ul>
+<p>Ahora nos centraremos en cómo definir el layout de forma clásica utilizando XML, y posteriormente exploraremos cómo hacerlo con Jetpack Compose.</p>
+<p>Para establecer el layout de un Activity utilizando XML, se utiliza el método <code>setContentView()</code> dentro del método <code>onCreate()</code>. Este método recibe como parámetro el identificador del layout que se desea utilizar, que se encuentra en la carpeta <code>res/layout</code> del proyecto.</p>
+<h2 id="registrar-un-activity-en-el-androidmanifestxml">Registrar un Activity en el AndroidManifest.xml</h2>
+<p>Para que el sistema pueda reconocer y lanzar un Activity, es necesario registrarlo en el archivo <code>AndroidManifest.xml</code>. Este archivo se encuentra en la raíz del proyecto y contiene información sobre la aplicación, incluyendo los componentes que la conforman.</p>
+<p>Para registrar un Activity, se debe agregar una entrada dentro de la etiqueta <code>&lt;application&gt;</code> en el archivo <code>AndroidManifest.xml</code>. La entrada debe incluir el nombre completo de la clase del Activity y, opcionalmente, otros atributos como el tema o la orientación de la pantalla.</p>
+<p>Además, es importante definir un Activity principal que actúe como punto de entrada de la aplicación. Este Activity se marca con el atributo <code>android.intent.action.MAIN</code> y se asocia con la categoría <code>android.intent.category.LAUNCHER</code>, lo que indica que es el Activity que se lanzará cuando el usuario inicie la aplicación desde el lanzador de aplicaciones.</p>
+<p>Veamos estos atributos en un ejemplo de registro de un Activity en el archivo <code>AndroidManifest.xml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;application</span>
+<span class="w">    </span><span class="na">android:allowBackup=</span><span class="s">"true"</span>
+<span class="w">    </span><span class="na">android:icon=</span><span class="s">"@mipmap/ic_launcher"</span>
+<span class="w">    </span><span class="na">android:label=</span><span class="s">"@string/app_name"</span>
+<span class="w">    </span><span class="na">android:roundIcon=</span><span class="s">"@mipmap/ic_launcher_round"</span>
+<span class="w">    </span><span class="na">android:supportsRtl=</span><span class="s">"true"</span>
+<span class="w">    </span><span class="na">android:theme=</span><span class="s">"@style/Theme.MyApplication"</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;activity</span><span class="w"> </span><span class="na">android:name=</span><span class="s">".MainActivity"</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;intent-filter&gt;</span>
+<span class="w">            </span><span class="nt">&lt;action</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;category</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.intent.category.LAUNCHER"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/intent-filter&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/activity&gt;</span>
+<span class="nt">&lt;/application&gt;</span>
+</code></pre></div>
+<p>En este ejemplo, hemos registrado un Activity llamado <code>MainActivity</code> como el Activity principal de la aplicación. Esto significa que cuando el usuario inicie la aplicación desde el lanzador de aplicaciones, se abrirá automáticamente el <code>MainActivity</code>.</p>
+<p>Es importante tener en cuenta el intent-filter, que define la acción y la categoría del Activity. La acción <code>android.intent.action.MAIN</code> indica que este Activity es el punto de entrada de la aplicación, mientras que la categoría <code>android.intent.category.LAUNCHER</code> indica que este Activity se mostrará en el lanzador de aplicaciones.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>En Android un Intent es un objeto que permite la comunicación entre diferentes componentes de la aplicación, como Activities, Services y Broadcast Receivers. Los Intents se utilizan para iniciar nuevas Activities, enviar datos entre ellas y realizar otras acciones dentro de la aplicación.</p>
+</div>
+<p>Puedes usar un Intent no solo para abrir tus propias Activities, sino también para abrir Activities de otras aplicaciones instaladas en el dispositivo. Por ejemplo, puedes usar un Intent para abrir la cámara, el navegador web o cualquier otra aplicación que tenga un Activity registrado para manejar la acción correspondiente.</p>
+<p>Ejemplo de apertura de la camara utilizando un Intent:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">MediaStore</span><span class="p">.</span><span class="na">ACTION_IMAGE_CAPTURE</span><span class="p">)</span>
+<span class="n">startActivity</span><span class="p">(</span><span class="n">intent</span><span class="p">)</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../introduccion/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introducción">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Introducción
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Víctor Suárez. IES Puebla de Vicar.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.footer"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
