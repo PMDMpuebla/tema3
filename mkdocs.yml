@@ -1,0 +1,38 @@
+site_name: Programación Multimedia y Dispositivos Móviles (PMDM) - Tema 3
+site_description: Introducción a Android - Tema 3 del módulo PMDM
+site_url: https://pmdmpuebla.github.io/tema3/
+theme:
+  name: material
+  palette:
+    primary: 'purple'
+    accent: 'indigo'
+  font:
+    text: Roboto
+    code: Roboto Mono
+  logo: img/alogo.png
+  features:
+    - navigation.footer
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+extra:
+  generator: false
+extra_css:
+  - css/style.css
+nav:
+  - Home: index.md
+  - Introducción: introduccion.md
+  - Activity: activity.md
+  - Interfaces en Android (Clásicas):
+    - Clásicas: interfaces/interfaces_clasicas.md
+    - Layouts: interfaces/layouts.md
+    - Controles: interfaces/controles.md
+    - Adapters: interfaces/adapters.md
+  - Jetpack Compose: 
+    - Introducción: jetpack/jetpack_compose.md
+    - Composables: jetpack/composables.md
+    - Layouts: jetpack/layouts_compose.md
+  - Referencias: referencias.md
+copyright: Copyright &copy; 2026 Víctor Suárez. IES Puebla de Vicar.
+
