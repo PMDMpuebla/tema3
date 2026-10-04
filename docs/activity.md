@@ -130,3 +130,27 @@ Ejemplo de apertura de la camara utilizando un Intent:
 val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
 startActivity(intent)
 ```
+
+## Pasar datos entre Activities
+
+Para pasar datos entre Activities en Android, se utilizan los Intents. Los Intents permiten enviar información adicional al iniciar una nueva Activity, lo que facilita la comunicación entre diferentes componentes de la aplicación.
+
+Un Intent puede contener datos en forma de pares clave-valor, que se pueden agregar utilizando el método `putExtra()`. Estos datos se pueden recuperar en la Activity de destino utilizando el método `getIntent()` y accediendo a los valores mediante las claves correspondientes.
+
+Veamos un ejemplo de cómo pasar datos entre Activities utilizando Intents:
+
+```kotlin
+// En la Activity de origen
+val intent = Intent(this, SecondActivity::class.java)
+intent.putExtra("EXTRA_MESSAGE", "Hola desde la primera Activity")
+startActivity(intent)
+```
+
+// En la Activity de destino
+```kotlin
+//En el método onCreate() de la Activity de destino
+val message = intent.getStringExtra("EXTRA_MESSAGE")
+if (message != null) {
+    // Utilizar el mensaje recibido
+}
+```

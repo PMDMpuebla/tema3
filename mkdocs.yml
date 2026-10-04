@@ -27,8 +27,9 @@ nav:
   - Interfaces en Android (Clásicas):
     - Clásicas: interfaces/interfaces_clasicas.md
     - Layouts: interfaces/layouts.md
-    - Controles: interfaces/controles.md
-    - Adapters: interfaces/adapters.md
+    - Controles (Widgets): interfaces/controles.md
+    - Adapters y Listeners: interfaces/adapters.md
+    - Otros Componentes: interfaces/otros_componentes.md
   - Jetpack Compose: 
     - Introducción: jetpack/jetpack_compose.md
     - Composables: jetpack/composables.md
