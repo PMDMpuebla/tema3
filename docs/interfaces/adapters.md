@@ -37,3 +37,11 @@ class MyAdapter(private val dataList: List<String>) : RecyclerView.Adapter<MyAda
     }
 }
 ```
+
+En este ejemplo vemos que se crea una clase `MyAdapter` que extiende de `RecyclerView.Adapter`. Se define un `ViewHolder` que contiene una referencia a un `TextView`, y se sobrescriben los métodos `onCreateViewHolder`, `onBindViewHolder` y `getItemCount` para crear y vincular las vistas con los datos.
+
+Cada método tiene una función específica:
+
+* `onCreateViewHolder`: Se encarga de crear una nueva vista para un elemento de la lista. Se trata de utilizar un `LayoutInflater` para inflar el layout correspondiente y devolver un `ViewHolder` que contenga la vista creada.
+* `onBindViewHolder`: Se encarga de vincular los datos con la vista correspondiente.
+* `getItemCount`: Devuelve el número total de elementos en la lista.
