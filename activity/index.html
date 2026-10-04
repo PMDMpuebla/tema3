@@ -16,6 +16,8 @@
         <link rel="prev" href="../introduccion/">
       
       
+        <link rel="next" href="../interfaces/interfaces_clasicas/">
+      
       
         
       
@@ -397,6 +399,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pasar-datos-entre-activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pasar datos entre Activities
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -459,7 +472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../interfaces/interfaces_clasicas.md" class="md-nav__link">
+      <a href="../interfaces/interfaces_clasicas/" class="md-nav__link">
         
   
   
@@ -487,7 +500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../interfaces/layouts.md" class="md-nav__link">
+      <a href="../interfaces/layouts/" class="md-nav__link">
         
   
   
@@ -515,14 +528,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../interfaces/controles.md" class="md-nav__link">
+      <a href="../interfaces/controles/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Controles
+    Controles (Widgets)
   
 
     
@@ -543,14 +556,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../interfaces/adapters.md" class="md-nav__link">
+      <a href="../interfaces/adapters/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Adapters
+    Adapters y Listeners
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces/otros_componentes.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Otros Componentes
   
 
     
@@ -840,6 +881,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pasar-datos-entre-activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pasar datos entre Activities
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -955,6 +1007,22 @@
 <div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="n">MediaStore</span><span class="p">.</span><span class="na">ACTION_IMAGE_CAPTURE</span><span class="p">)</span>
 <span class="n">startActivity</span><span class="p">(</span><span class="n">intent</span><span class="p">)</span>
 </code></pre></div>
+<h2 id="pasar-datos-entre-activities">Pasar datos entre Activities</h2>
+<p>Para pasar datos entre Activities en Android, se utilizan los Intents. Los Intents permiten enviar información adicional al iniciar una nueva Activity, lo que facilita la comunicación entre diferentes componentes de la aplicación.</p>
+<p>Un Intent puede contener datos en forma de pares clave-valor, que se pueden agregar utilizando el método <code>putExtra()</code>. Estos datos se pueden recuperar en la Activity de destino utilizando el método <code>getIntent()</code> y accediendo a los valores mediante las claves correspondientes.</p>
+<p>Veamos un ejemplo de cómo pasar datos entre Activities utilizando Intents:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// En la Activity de origen</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">intent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Intent</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">SecondActivity</span><span class="o">::</span><span class="n">class</span><span class="p">.</span><span class="na">java</span><span class="p">)</span>
+<span class="n">intent</span><span class="p">.</span><span class="na">putExtra</span><span class="p">(</span><span class="s">"EXTRA_MESSAGE"</span><span class="p">,</span><span class="w"> </span><span class="s">"Hola desde la primera Activity"</span><span class="p">)</span>
+<span class="n">startActivity</span><span class="p">(</span><span class="n">intent</span><span class="p">)</span>
+</code></pre></div>
+<p>// En la Activity de destino
+<div class="highlight"><pre><span></span><code><span class="c1">//En el método onCreate() de la Activity de destino</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intent</span><span class="p">.</span><span class="na">getStringExtra</span><span class="p">(</span><span class="s">"EXTRA_MESSAGE"</span><span class="p">)</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">message</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Utilizar el mensaje recibido</span>
+<span class="p">}</span>
+</code></pre></div></p>
 
 
 
@@ -999,6 +1067,22 @@
             </div>
           </a>
         
+        
+          
+          <a href="../interfaces/interfaces_clasicas/" class="md-footer__link md-footer__link--next" aria-label="Next: Clásicas">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Clásicas
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     

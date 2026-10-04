@@ -1,0 +1,1030 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Introducción a Android - Tema 3 del módulo PMDM">
+      
+      
+      
+        <link rel="canonical" href="https://pmdmpuebla.github.io/tema3/interfaces/controles/">
+      
+      
+        <link rel="prev" href="../layouts/">
+      
+      
+        <link rel="next" href="../adapters/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Controles (Widgets) - Programación Multimedia y Dispositivos Móviles (PMDM) - Tema 3</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/style.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#controles-widgets" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Programación Multimedia y Dispositivos Móviles (PMDM) - Tema 3" class="md-header__button md-logo" aria-label="Programación Multimedia y Dispositivos Móviles (PMDM) - Tema 3" data-md-component="logo">
+      
+  <img src="../../img/alogo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programación Multimedia y Dispositivos Móviles (PMDM) - Tema 3
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Controles (Widgets)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Programación Multimedia y Dispositivos Móviles (PMDM) - Tema 3" class="md-nav__button md-logo" aria-label="Programación Multimedia y Dispositivos Móviles (PMDM) - Tema 3" data-md-component="logo">
+      
+  <img src="../../img/alogo.png" alt="logo">
+
+    </a>
+    Programación Multimedia y Dispositivos Móviles (PMDM) - Tema 3
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduccion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../activity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interfaces en Android (Clásicas)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Interfaces en Android (Clásicas)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interfaces_clasicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clásicas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../layouts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layouts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Controles (Widgets)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Controles (Widgets)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#textview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TextView
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edittext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EditText
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#button" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Button
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spinner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spinner
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imageview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ImageView
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#otros-controles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Otros Controles
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adapters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adapters y Listeners
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../otros_componentes.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Otros Componentes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jetpack Compose
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Jetpack Compose
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jetpack/jetpack_compose.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jetpack/composables.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Composables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jetpack/layouts_compose.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layouts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../referencias.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencias
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#textview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TextView
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edittext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        EditText
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#button" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Button
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spinner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spinner
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imageview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ImageView
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#otros-controles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Otros Controles
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="controles-widgets">Controles (widgets)</h1>
+<p>Los controles (también conocidos como widgets) son elementos visuales que permiten a los usuarios interactuar con la aplicación. Son la base de la interfaz de usuario en Android.</p>
+<p>Mientras que los Layouts definen la estructura y organización de la interfaz, los controles son los elementos que permiten al usuario realizar acciones, como ingresar texto, seleccionar opciones, o activar funciones.</p>
+<p>Hay diferentes tipos de controles en Android, cada uno con su propia funcionalidad y propósito. Algunos de los controles más comunes incluyen:</p>
+<ul>
+<li><strong>TextView</strong>: Muestra texto en la pantalla. Es un control de solo lectura y no permite la interacción del usuario.</li>
+<li><strong>EditText</strong>: Permite al usuario ingresar texto. Es un control interactivo que puede aceptar diferentes tipos de entrada, como texto, números, o contraseñas.</li>
+<li><strong>Button</strong>: Permite al usuario realizar una acción al hacer clic en él. Puede tener diferentes estilos y comportamientos, como botones de texto, botones de imagen, o botones con iconos.</li>
+<li><strong>CheckBox</strong>: Permite al usuario seleccionar una o varias opciones de un conjunto. Es un control de selección múltiple que puede estar marcado o desmarcado.</li>
+<li><strong>RadioButton</strong>: Permite al usuario seleccionar una opción de un conjunto. Es un control de selección única, y generalmente se agrupa en un <code>RadioGroup</code> para asegurar que solo una opción esté seleccionada a la vez.</li>
+<li><strong>Switch</strong>: Permite al usuario activar o desactivar una opción. Es un control de selección binaria que puede representar estados como "encendido" o "apagado".</li>
+<li><strong>Spinner</strong>: Permite al usuario seleccionar una opción de una lista desplegable.</li>
+<li><strong>SeekBar</strong>: Permite al usuario seleccionar un valor dentro de un rango mediante un control deslizante.</li>
+<li><strong>ProgressBar</strong>: Muestra el progreso de una operación en curso. Puede ser indeterminado (sin un valor específico) o determinado (con un valor que indica el progreso).</li>
+<li><strong>ImageView</strong>: Muestra imágenes en la pantalla. Puede mostrar imágenes desde recursos locales o desde la web.</li>
+</ul>
+<p>Cada uno de estos controles tiene sus propios atributos y propiedades que se pueden configurar para personalizar su apariencia y comportamiento. En las siguientes secciones, veremos algunos de estos controles en detalle y cómo se pueden utilizar en una aplicación Android.</p>
+<p>Veamos algunos de estos controles en detalle.</p>
+<h2 id="textview">TextView</h2>
+<p>Un <code>TextView</code> es un control que permite mostrar texto en la pantalla. Es un control de solo lectura y no permite la interacción del usuario.</p>
+<p>Este control es muy versátil y se puede utilizar para mostrar títulos, descripciones, mensajes de error, o cualquier otro tipo de texto en la interfaz de usuario.</p>
+<p>Algunas de sus propiedades más comunes incluyen:</p>
+<ul>
+<li><code>android:text</code>: Define el texto que se mostrará en el control.</li>
+<li><code>android:textSize</code>: Define el tamaño del texto.</li>
+<li><code>android:textColor</code>: Define el color del texto.</li>
+</ul>
+<h2 id="edittext">EditText</h2>
+<p>Un <code>EditText</code> es un control que permite al usuario ingresar texto. Es un control interactivo que puede aceptar diferentes tipos de entrada, como texto, números, o contraseñas.</p>
+<p>Algunas de sus propiedades más comunes incluyen:</p>
+<ul>
+<li><code>android:hint</code>: Define un texto de sugerencia que se muestra cuando el control está vacío.</li>
+<li><code>android:inputType</code>: Define el tipo de entrada que se espera, como texto, número, correo electrónico, etc.</li>
+<li><code>android:maxLength</code>: Define la longitud máxima del texto que se puede ingresar en el control.</li>
+</ul>
+<h2 id="button">Button</h2>
+<p>Un <code>Button</code> es un control que permite al usuario realizar una acción al hacer clic en él. Puede tener diferentes estilos y comportamientos, como botones de texto, botones de imagen, o botones con iconos.</p>
+<p>Algunas de sus propiedades más comunes incluyen:</p>
+<ul>
+<li><code>android:text</code>: Define el texto que se mostrará en el botón.</li>
+<li><code>android:onClick</code>: Define el método que se ejecutará cuando el usuario haga clic en el botón; aunque este método se define en el código Java o Kotlin de la aplicación.</li>
+<li><code>android:background</code>: Define el fondo del botón, que puede ser un color, una imagen, o un drawable personalizado.</li>
+</ul>
+<p>Este elemento es fundamental para la interacción del usuario con la aplicación, ya que permite ejecutar acciones específicas al ser presionado.</p>
+<h2 id="spinner">Spinner</h2>
+<p>Un <code>Spinner</code> es un control que permite al usuario seleccionar una opción de una lista desplegable. Es útil cuando se desea ofrecer varias opciones al usuario sin ocupar demasiado espacio en la interfaz.</p>
+<p>Este control se puede configurar con un adaptador que proporciona los datos que se mostrarán en la lista desplegable. Al seleccionar una opción, el <code>Spinner</code> muestra el valor seleccionado y permite al usuario cambiar su elección.</p>
+<p>Algunas de sus propiedades más comunes incluyen:</p>
+<ul>
+<li><code>android:entries</code>: Define un array de opciones que se mostrarán en el <code>Spinner</code>.</li>
+<li><code>android:prompt</code>: Define un texto que se mostrará como título de la lista desplegable cuando el usuario haga clic en el <code>Spinner</code>.</li>
+</ul>
+<p>También se puede personalizar la apariencia del <code>Spinner</code> mediante estilos y temas, así como manejar eventos de selección para realizar acciones específicas cuando el usuario elige una opción.</p>
+<p>Además, se puede establecer un adaptador personalizado para mostrar elementos más complejos en la lista desplegable, como imágenes junto con texto, utilizando un <code>ArrayAdapter</code> o un <code>BaseAdapter</code>. Veremos en las siguientes secciones el uso de Adapters y Listeners para manejar la interacción con los controles de manera más avanzada.</p>
+<h2 id="imageview">ImageView</h2>
+<p>Un <code>ImageView</code> es un control que permite mostrar imágenes en la pantalla. Puede mostrar imágenes desde recursos locales o desde la web.</p>
+<p>Este control es muy útil para mostrar logotipos, iconos, fotos, o cualquier otro tipo de imagen en la interfaz de usuario.</p>
+<p>Algunas de sus propiedades más comunes incluyen:</p>
+<ul>
+<li><code>android:src</code>: Define la fuente de la imagen que se mostrará en el control.</li>
+<li><code>android:scaleType</code>: Define cómo se ajustará la imagen dentro del control, como <code>centerCrop</code>, <code>fitCenter</code>, <code>fitXY</code>, entre otros.</li>
+<li><code>android:contentDescription</code>: Define una descripción de la imagen para mejorar la accesibilidad, especialmente para usuarios con discapacidades visuales.</li>
+</ul>
+<p>Este control también se puede utilizar junto con bibliotecas de carga de imágenes, como Glide o Picasso, para cargar imágenes desde la web de manera eficiente y con soporte para caché y manejo de errores.</p>
+<h2 id="otros-controles">Otros Controles</h2>
+<p>Además de los controles mencionados anteriormente, existen muchos otros controles en Android que permiten crear interfaces de usuario más complejas y funcionales.</p>
+<p>Puedes ver algunos de estos controles en la documentación oficial de Android: <a href="https://developer.android.com/guide/topics/ui/controls">Controles de la interfaz de usuario</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../layouts/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Layouts">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Layouts
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../adapters/" class="md-footer__link md-footer__link--next" aria-label="Next: Adapters y Listeners">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Adapters y Listeners
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Víctor Suárez. IES Puebla de Vicar.
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.footer"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
