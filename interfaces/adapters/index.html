@@ -16,6 +16,8 @@
         <link rel="prev" href="../controles/">
       
       
+        <link rel="next" href="../otros_componentes/">
+      
       
         
       
@@ -501,6 +503,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#listeners" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Listeners
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -517,7 +530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../otros_componentes.md" class="md-nav__link">
+      <a href="../otros_componentes/" class="md-nav__link">
         
   
   
@@ -525,144 +538,6 @@
     
   
     Otros Componentes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Jetpack Compose
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Jetpack Compose
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../jetpack/jetpack_compose.md" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Introducción
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../jetpack/composables.md" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Composables
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../jetpack/layouts_compose.md" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Layouts
   
 
     
@@ -758,6 +633,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#listeners" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Listeners
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -810,6 +696,32 @@
 <li><code>onBindViewHolder</code>: Se encarga de vincular los datos con la vista correspondiente.</li>
 <li><code>getItemCount</code>: Devuelve el número total de elementos en la lista.</li>
 </ul>
+<p>Una vez creado el Adapter, se puede utilizar en un <code>RecyclerView</code> para mostrar la lista de elementos. Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span><span class="w"> </span><span class="n">Bundle?</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+<span class="w">    </span><span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">activity_main</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">recyclerView</span><span class="p">:</span><span class="w"> </span><span class="n">RecyclerView</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">recyclerView</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">adapter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MyAdapter</span><span class="p">(</span><span class="n">dataList</span><span class="p">)</span>
+<span class="w">    </span><span class="n">recyclerView</span><span class="p">.</span><span class="na">adapter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">adapter</span>
+<span class="w">    </span><span class="n">recyclerView</span><span class="p">.</span><span class="na">layoutManager</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LinearLayoutManager</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>En este ejemplo, se obtiene una referencia al <code>RecyclerView</code>, se crea una instancia del <code>MyAdapter</code> con los datos y se establece como el Adapter del <code>RecyclerView</code>. Además, se define un <code>LayoutManager</code> para controlar la disposición de los elementos en la lista.</p>
+<h2 id="listeners">Listeners</h2>
+<p>Los Listeners son interfaces que permiten capturar y responder a eventos de usuario, como clics en botones, cambios en campos de texto o interacciones con elementos de la lista. Para utilizar un Listener, es necesario implementar la interfaz correspondiente y sobrescribir los métodos necesarios para manejar los eventos.</p>
+<p>El uso de Listeners es fundamental para crear aplicaciones interactivas y responsivas, ya que permite reaccionar a las acciones del usuario y actualizar la interfaz de usuario en consecuencia.</p>
+<p>Vamos a ver un ejemplo de cómo implementar un Listener para manejar el clic en un botón dentro de un <code>LinearLayout</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">button</span><span class="p">:</span><span class="w"> </span><span class="n">Button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">myButton</span><span class="p">)</span>
+<span class="n">button</span><span class="p">.</span><span class="na">setOnClickListener</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Acción a realizar cuando se hace clic en el botón</span>
+<span class="w">    </span><span class="n">Toast</span><span class="p">.</span><span class="na">makeText</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="s">"Botón clickeado"</span><span class="p">,</span><span class="w"> </span><span class="n">Toast</span><span class="p">.</span><span class="na">LENGTH_SHORT</span><span class="p">).</span><span class="na">show</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Un Toast es un mensaje breve que aparece en la pantalla para informar al usuario sobre una acción realizada. En este caso, se muestra un Toast cuando se hace clic en el botón.</p>
+</div>
+<p>Como vemos en el ejemplo, se obtiene una referencia al botón y se establece un <code>OnClickListener</code> que define la acción a realizar cuando se hace clic en el botón. En este caso, se muestra un Toast con un mensaje informativo.</p>
 
 
 
@@ -854,6 +766,22 @@
             </div>
           </a>
         
+        
+          
+          <a href="../otros_componentes/" class="md-footer__link md-footer__link--next" aria-label="Next: Otros Componentes">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Otros Componentes
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
