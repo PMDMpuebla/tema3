@@ -30,10 +30,6 @@ nav:
     - Controles (Widgets): interfaces/controles.md
     - Adapters y Listeners: interfaces/adapters.md
     - Otros Componentes: interfaces/otros_componentes.md
-  - Jetpack Compose: 
-    - Introducción: jetpack/jetpack_compose.md
-    - Composables: jetpack/composables.md
-    - Layouts: jetpack/layouts_compose.md
   - Referencias: referencias.md
 copyright: Copyright &copy; 2026 Víctor Suárez. IES Puebla de Vicar.
 

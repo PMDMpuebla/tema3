@@ -9,3 +9,6 @@ Para aquellos que deseen profundizar en el tema, se proporcionarán recursos adi
 Es importante mencionar, que este tema está diseñado para ser utillizado con Kotlin, por lo que se recomienda tener conocimientos básicos de este lenguaje de programación antes de comenzar. Sin embargo, los conceptos y técnicas presentados también son aplicables a otros lenguajes compatibles con Android, como Java.
 
 En el año 2016, Google anunció que Jetpack Compose se convertiría en la forma recomendada de crear interfaces de usuario en Android, marcando un cambio significativo en el desarrollo de aplicaciones. A medida que avancemos en este tema, exploraremos cómo Jetpack Compose simplifica la creación de interfaces y cómo se integra con las prácticas tradicionales basadas en XML.
+
+!!! warning
+    Este tema se irá ampliando y actualizando a medida que se vaya profundizando en el desarrollo de interfaces de usuario en Android, incluyendo nuevas técnicas, herramientas y mejores prácticas. Se recomienda a los estudiantes mantenerse al día con las actualizaciones y consultar la documentación oficial de Android para obtener información adicional y recursos complementarios.

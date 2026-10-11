@@ -45,3 +45,39 @@ Cada método tiene una función específica:
 * `onCreateViewHolder`: Se encarga de crear una nueva vista para un elemento de la lista. Se trata de utilizar un `LayoutInflater` para inflar el layout correspondiente y devolver un `ViewHolder` que contenga la vista creada.
 * `onBindViewHolder`: Se encarga de vincular los datos con la vista correspondiente.
 * `getItemCount`: Devuelve el número total de elementos en la lista.
+
+Una vez creado el Adapter, se puede utilizar en un `RecyclerView` para mostrar la lista de elementos. Por ejemplo:
+
+```kotlin
+override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_main)
+    val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
+    val adapter = MyAdapter(dataList)
+    recyclerView.adapter = adapter
+    recyclerView.layoutManager = LinearLayoutManager(this)
+}
+```
+
+En este ejemplo, se obtiene una referencia al `RecyclerView`, se crea una instancia del `MyAdapter` con los datos y se establece como el Adapter del `RecyclerView`. Además, se define un `LayoutManager` para controlar la disposición de los elementos en la lista.
+
+## Listeners
+
+Los Listeners son interfaces que permiten capturar y responder a eventos de usuario, como clics en botones, cambios en campos de texto o interacciones con elementos de la lista. Para utilizar un Listener, es necesario implementar la interfaz correspondiente y sobrescribir los métodos necesarios para manejar los eventos.
+
+El uso de Listeners es fundamental para crear aplicaciones interactivas y responsivas, ya que permite reaccionar a las acciones del usuario y actualizar la interfaz de usuario en consecuencia.
+
+Vamos a ver un ejemplo de cómo implementar un Listener para manejar el clic en un botón dentro de un `LinearLayout`:
+
+```kotlin
+val button: Button = findViewById(R.id.myButton)
+button.setOnClickListener {
+    // Acción a realizar cuando se hace clic en el botón
+    Toast.makeText(this, "Botón clickeado", Toast.LENGTH_SHORT).show()
+}
+```
+
+!!! info
+    Un Toast es un mensaje breve que aparece en la pantalla para informar al usuario sobre una acción realizada. En este caso, se muestra un Toast cuando se hace clic en el botón.
+
+Como vemos en el ejemplo, se obtiene una referencia al botón y se establece un `OnClickListener` que define la acción a realizar cuando se hace clic en el botón. En este caso, se muestra un Toast con un mensaje informativo.
