@@ -2,7 +2,7 @@
 
 Vamos a crear una aplicación sencilla utilizando Jetpack Compose. Esta aplicación mostrará una lista de elementos y permitirá al usuario interactuar con ellos.
 
-Comenzaremos creando un proyecto de Android en Android Studio y seleccionando la opción de Jetpack Compose. Una vez creado el proyecto, podemos empezar a construir nuestra interfaz de usuario utilizando composables.
+Comenzaremos creando un proyecto de Android en Android Studio y seleccionando la opción de Jetpack Compose (Selecciona la opción de Empty Activity para que añada y configure Jetpack Compose). Una vez creado el proyecto, podemos empezar a construir nuestra interfaz de usuario utilizando composables.
 
 ### Estructura del proyecto
 
@@ -86,18 +86,18 @@ La función `setContent` se utiliza para establecer el contenido de la actividad
 
 Vamos a ver el composable `MyApp` que definirá la estructura principal de la interfaz de usuario:
 
-```kotlinkotlin
+```kotlin
 @Composable
 fun MyApp(itemViewModel: ItemViewModel) {
     val items by itemViewModel.items.collectAsState()
-    Remember { itemViewModel.loadItems() }
+    remember { itemViewModel.loadItems() }
     Column {
         LazyColumn {
             items(items) { item ->
                 Text(item.name)
             }
         }
-        Button(onClick = { itemViewModel.addItem("New Item") }) {
+        Button(onClick = { itemViewModel.addItem("Item ${items.size + 1}") }) {
             Text("Add Item")
         }
     }
@@ -110,3 +110,19 @@ Veamos por partes este ejemplo:
 - **Uso de `Column`**: Se utiliza para organizar los elementos de la interfaz de usuario en una disposición vertical. Dentro de la columna, se encuentra un `LazyColumn` que muestra la lista de elementos y un botón para agregar nuevos elementos.
 - **Uso de `LazyColumn`**: Se utiliza para mostrar la lista de elementos de manera eficiente, renderizando solo los elementos visibles en la pantalla. Esto mejora el rendimiento en listas largas. En este caso se cargan los elementos de la lista utilizando el método `items()` que recibe la lista de elementos y un lambda que define cómo se debe mostrar cada elemento.
 - **Uso de `Button`**: Se utiliza para permitir al usuario agregar nuevos elementos a la lista. Al hacer clic en el botón, se llama al método `addItem()` del ViewModel, que agrega un nuevo elemento a la lista y provoca que la interfaz de usuario se actualice automáticamente.
+
+Podemos personalizar aún más la interfaz de usuario agregando estilos, colores y otros elementos visuales según nuestras necesidades. Jetpack Compose nos ofrece una gran flexibilidad para crear interfaces de usuario modernas y atractivas de manera declarativa.
+
+Podemos mostrar una previsualización creado un composable de previsualización, que nos permitirá ver cómo se verá nuestra interfaz de usuario sin necesidad de ejecutar la aplicación en un dispositivo o emulador. Esto es especialmente útil durante el desarrollo, ya que nos permite iterar rápidamente sobre el diseño y la funcionalidad de la aplicación.
+
+```kotlin
+@Preview(showBackground = true)
+@Composable
+fun MyAppPreView(){
+    MyApp(itemViewModel = ItemViewModel())
+}
+```
+
+Tras implementar estos componentes, nuestra aplicación estará lista para ejecutarse y mostrar la lista de elementos, permitiendo al usuario interactuar con ellos de manera sencilla y eficiente.
+
+
