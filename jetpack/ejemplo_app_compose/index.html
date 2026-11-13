@@ -851,7 +851,7 @@
 
 <h1 id="ejemplo-app-compose">Ejemplo App Compose</h1>
 <p>Vamos a crear una aplicación sencilla utilizando Jetpack Compose. Esta aplicación mostrará una lista de elementos y permitirá al usuario interactuar con ellos.</p>
-<p>Comenzaremos creando un proyecto de Android en Android Studio y seleccionando la opción de Jetpack Compose. Una vez creado el proyecto, podemos empezar a construir nuestra interfaz de usuario utilizando composables.</p>
+<p>Comenzaremos creando un proyecto de Android en Android Studio y seleccionando la opción de Jetpack Compose (Selecciona la opción de Empty Activity para que añada y configure Jetpack Compose). Una vez creado el proyecto, podemos empezar a construir nuestra interfaz de usuario utilizando composables.</p>
 <h3 id="estructura-del-proyecto">Estructura del proyecto</h3>
 <p>Vamos a crear la arquitectura básica de nuestra aplicación siguiendo el patrón MVVM (Model-View-ViewModel). La estructura del proyecto será la siguiente:</p>
 <div class="highlight"><pre><span></span><code>app/
@@ -909,21 +909,21 @@
 <p>Vemos como hemos creado una instancia del <code>ItemViewModel</code> utilizando la delegación <code>by viewModels()</code>, lo que nos permite acceder al ViewModel de manera sencilla y mantener su ciclo de vida vinculado a la actividad. Habrás observado que la clase <code>MainActivity</code> extiende de <code>ComponentActivity</code>, lo que nos permite utilizar Jetpack Compose para definir la interfaz de usuario de manera declarativa.</p>
 <p>La función <code>setContent</code> se utiliza para establecer el contenido de la actividad, y dentro de ella llamamos a nuestro composable <code>MyApp</code>, pasando el <code>itemViewModel</code> como parámetro. Esto nos permite que la interfaz de usuario tenga acceso al estado y los datos gestionados por el ViewModel.</p>
 <p>Vamos a ver el composable <code>MyApp</code> que definirá la estructura principal de la interfaz de usuario:</p>
-<div class="highlight"><pre><span></span><code>@Composable
-fun MyApp(itemViewModel: ItemViewModel) {
-    val items by itemViewModel.items.collectAsState()
-    Remember { itemViewModel.loadItems() }
-    Column {
-        LazyColumn {
-            items(items) { item -&gt;
-                Text(item.name)
-            }
-        }
-        Button(onClick = { itemViewModel.addItem("New Item") }) {
-            Text("Add Item")
-        }
-    }
-}
+<div class="highlight"><pre><span></span><code><span class="nd">@Composable</span>
+<span class="kd">fun</span><span class="w"> </span><span class="nf">MyApp</span><span class="p">(</span><span class="n">itemViewModel</span><span class="p">:</span><span class="w"> </span><span class="n">ItemViewModel</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">items</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">itemViewModel</span><span class="p">.</span><span class="na">items</span><span class="p">.</span><span class="na">collectAsState</span><span class="p">()</span>
+<span class="w">    </span><span class="n">remember</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">itemViewModel</span><span class="p">.</span><span class="na">loadItems</span><span class="p">()</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="n">Column</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">LazyColumn</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">items</span><span class="p">(</span><span class="n">items</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="o">-&gt;</span>
+<span class="w">                </span><span class="n">Text</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="na">name</span><span class="p">)</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">Button</span><span class="p">(</span><span class="n">onClick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">itemViewModel</span><span class="p">.</span><span class="na">addItem</span><span class="p">(</span><span class="s">"Item </span><span class="si">${</span><span class="n">items</span><span class="p">.</span><span class="na">size</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="si">}</span><span class="s">"</span><span class="p">)</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">Text</span><span class="p">(</span><span class="s">"Add Item"</span><span class="p">)</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>Veamos por partes este ejemplo:</p>
 <ul>
@@ -932,6 +932,15 @@ fun MyApp(itemViewModel: ItemViewModel) {
 <li><strong>Uso de <code>LazyColumn</code></strong>: Se utiliza para mostrar la lista de elementos de manera eficiente, renderizando solo los elementos visibles en la pantalla. Esto mejora el rendimiento en listas largas. En este caso se cargan los elementos de la lista utilizando el método <code>items()</code> que recibe la lista de elementos y un lambda que define cómo se debe mostrar cada elemento.</li>
 <li><strong>Uso de <code>Button</code></strong>: Se utiliza para permitir al usuario agregar nuevos elementos a la lista. Al hacer clic en el botón, se llama al método <code>addItem()</code> del ViewModel, que agrega un nuevo elemento a la lista y provoca que la interfaz de usuario se actualice automáticamente.</li>
 </ul>
+<p>Podemos personalizar aún más la interfaz de usuario agregando estilos, colores y otros elementos visuales según nuestras necesidades. Jetpack Compose nos ofrece una gran flexibilidad para crear interfaces de usuario modernas y atractivas de manera declarativa.</p>
+<p>Podemos mostrar una previsualización creado un composable de previsualización, que nos permitirá ver cómo se verá nuestra interfaz de usuario sin necesidad de ejecutar la aplicación en un dispositivo o emulador. Esto es especialmente útil durante el desarrollo, ya que nos permite iterar rápidamente sobre el diseño y la funcionalidad de la aplicación.</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@Preview</span><span class="p">(</span><span class="n">showBackground</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
+<span class="nd">@Composable</span>
+<span class="kd">fun</span><span class="w"> </span><span class="nf">MyAppPreView</span><span class="p">(){</span>
+<span class="w">    </span><span class="n">MyApp</span><span class="p">(</span><span class="n">itemViewModel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ItemViewModel</span><span class="p">())</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Tras implementar estos componentes, nuestra aplicación estará lista para ejecutarse y mostrar la lista de elementos, permitiendo al usuario interactuar con ellos de manera sencilla y eficiente.</p>
 
 
 
